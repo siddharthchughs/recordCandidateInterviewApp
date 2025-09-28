@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class UserImagepicker extends StatefulWidget {
+  const UserImagepicker({super.key, required this.onImageSelected});
+  final Function(File imagePath) onImageSelected;
+
   @override
   State<StatefulWidget> createState() => _UserImagePickerState();
 }
@@ -26,6 +29,7 @@ class _UserImagePickerState extends State<UserImagepicker> {
     setState(() {
       _pickImageFile = File(imageSelected.path);
     });
+    widget.onImageSelected(_pickImageFile!);
   }
 
   @override
@@ -43,7 +47,7 @@ class _UserImagePickerState extends State<UserImagepicker> {
           onPressed: _imagePicker,
           icon: Icon(Icons.image),
           label: Text(
-            'data',
+            'Upload Image',
             style: TextStyle(fontSize: 14, color: Colors.blue),
           ),
         ),

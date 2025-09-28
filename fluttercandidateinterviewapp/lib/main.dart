@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttercandidateinterviewapp/widget/screens/home_screen.dart';
+import 'package:fluttercandidateinterviewapp/widget/screens/list_of_users.dart';
 import 'package:fluttercandidateinterviewapp/widget/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fluttercandidateinterviewapp/widget/screens/splash_screen.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
             return HomeScreen();
           }
 
-          return Login_Screen();
+          return LoginScreen();
         },
       ),
     );
